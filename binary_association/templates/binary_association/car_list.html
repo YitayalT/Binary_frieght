@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Car List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Car ID</th>
+                <th>Model</th>
+                <th>Owner</th>
+                <th>Association</th>
+                <th>Insurance Provider</th>
+                <th>Rental Period</th>
+                <th>Fuel Type</th>
+                <th>Cargo Type</th>
+                <th>Cargo Capacity</th>
+                <th>Vehicle Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.car_id }}</td>
+                <td>{{ car.car_model }}</td>
+                <td>{{ car.owner.full_name_or_company_name }}</td>
+                <td>{{ car.association.association_id }}</td>
+                <td>{{ car.insurance_provider }}</td>
+                <td>{{ car.rental_period }}</td>
+                <td>{{ car.fuel_type }}</td>
+                <td>{{ car.cargo_type }}</td>
+                <td>{{ car.cargo_capacity }}</td>
+                <td>{{ car.vehicle_age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

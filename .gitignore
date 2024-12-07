@@ -1,0 +1,35 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Database
+*.sqlite3
+*.db
+
+# Django secret key file
+*.env
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+myenv/
+
+# IDE and editor specific files
+.vscode/
+.idea/
+
+# macOS specific files
+.DS_Store
+
+# Log files
+*.log
+
+# Static files collected by Django
+/static/

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Owner List</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Full Name / Company Name</th>
+            <th>Owner Type</th>
+            <th>Address</th>
+            <th>National ID Number</th>
+            <th>Tax ID (TIN)</th>
+            <th>Driver’s License Number</th>
+            <th>Date of Birth</th>
+            <th>Ownership Start Date</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for owner in owners %}
+        <tr>
+            <td>{{ owner.full_name_or_company_name }}</td>
+            <td>{{ owner.owner_type }}</td>
+            <td>{{ owner.address }}</td>
+            <td>{{ owner.national_id_number }}</td>
+            <td>{{ owner.tax_identification_number }}</td>
+            <td>{{ owner.driver_license_number }}</td>
+            <td>{{ owner.date_of_birth }}</td>
+            <td>{{ owner.ownership_start_date }}</td>
+            <td>{{ owner.phone_number }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="9">No owners available</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
