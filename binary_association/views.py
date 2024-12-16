@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Car, Association, Owner
 
+def index(request):
+    return render(request,'binary_association/index.html' )
 def car_list(request):
     # Fetch all cars from the database
     cars = Car.objects.all()
@@ -23,3 +25,6 @@ def owner_list(request):
 
     # Pass the owner data to the template
     return render(request, 'binary_association/owner_list.html', {'owners': owners})
+
+def request(request):
+    return render(request, 'binary_association/request.html')

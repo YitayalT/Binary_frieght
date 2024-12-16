@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Car
 from .models import Association
-from .models import Owner
+from .models import Owner, Request
 
 # Custom Admin Site class
 admin.site.site_header = 'Binary Freight Logistics Owner'
@@ -55,6 +55,7 @@ class OwnerAdmin(admin.ModelAdmin):
 admin.site.register(Car, CarAdmin)
 admin.site.register(Owner, OwnerAdmin)
 admin.site.register(Association, AssociationAdmin)
+admin.site.register(Request)
 
 
 

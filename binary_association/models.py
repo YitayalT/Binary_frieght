@@ -54,3 +54,19 @@ class Car(models.Model):
     class Meta:
         verbose_name = "Car"
         verbose_name_plural = "Cars"
+        
+        
+class Request(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('declined', 'Declined'),
+    ]
+
+    owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    reason = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.owner.name} - {self.status}"

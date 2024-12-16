@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'binary_association',
     'jet.dashboard',
     'jet',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'binary_vehicle_management_system.urls'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 TEMPLATES = [
     {
